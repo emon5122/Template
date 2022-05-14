@@ -1,0 +1,13 @@
+# This is just basic way of using git and github.
+# There are multiple ways of doing it but this is my personal preference.
+
+Step 1: Make a repository in github.
+Step 2: Copy the ssh link from there.
+Step 3: Use terminal/CMD/Powershell and $git clone git@github.com:{username}/{repository name}.git
+Step 4: Make changes
+Step 5: git add .(it refers to any change you have made in the current directory or you can specify specefic file replace . with file/folder name) 
+Step 6: git commit -m "Your custom messages"
+Step 7: git push (Pushes your local changes to the repository)
+Step 7: git pull (Pulls changes from your github to the local repository)
+
+***You can always use $git --help to get help menu***
