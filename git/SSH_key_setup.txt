@@ -1,0 +1,12 @@
+#This is txt file is just the general guideline how to setup ssh based authentication between any system to github in order to push and pull without having to type passwords etc manually.
+#This setup saves time of developer and makes life easier.
+#For more info: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+Step 1: Open any terminal or CMD or Powershell (make sure you have git installed in your system.)
+Step 2: $ ssh-keygen -t ed25519 -C "your_email@example.com"(Use same email as github account)
+Step 3: Copy the public key.
+Step 4: Browse https://github.com/settings/ssh/new then give it any friendly name and paste your public key. Save and you're done.
+Step 5: It's for testing purpose. Repeat step 1 and $ ssh -T git@github.com
+
+
+After that clone any repository using ssh instead of HTTP and you don't need to type your username, passwords etc anymore!
