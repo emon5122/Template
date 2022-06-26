@@ -27,7 +27,7 @@ source "proxmox" "ubuntu-server-jammy" {
     #insecure_skip_tls_verify = true
     
     # VM General Settings
-    node = "Powerhouse"
+    node = "powerhouse"
     vm_id = "1100"
     vm_name = "ubuntu-server-jammy"
     template_description = "Ubuntu Server jammy Image"
