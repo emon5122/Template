@@ -1,0 +1,8 @@
+- hosts: workers
+  become: yes
+  gather_facts: yes
+
+  tasks:
+   - name: Join cluster.
+     become: yes
+     shell: "kubeadm join 10.27.27.120:6443 --token m9hkb7.iy0n55d9sviv7m31     --discovery-token-ca-cert-hash sha256:58a0017d6c5c365e63f642bd007313bcbc1090e2ac242acb156d6edc099fa257 "
