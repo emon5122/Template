@@ -2,7 +2,7 @@
 ```
 packer validate -var-file='../credentials.pkr.hcl' ubuntu-server-jammy.pkr.hcl
 ```
-*Build command
+* Build command
 ```
 packer build -var-file='../credentials.pkr.hcl' ubuntu-server-jammy.pkr.hcl
 ```
