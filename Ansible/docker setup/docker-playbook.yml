@@ -1,0 +1,34 @@
+- hosts: server
+  become: no
+  gather_facts: yes
+  remote_user: ubuntu
+  become_method: sudo
+  become_user: root
+  connection: ssh
+
+  tasks:
+  - name: Update & Upgrade
+    shell: sudo apt update && sudo apt upgrade -y
+  - name: Docker prerequisites
+    shell: |
+      sudo apt-get install \
+      ca-certificates \
+      curl \
+      gnupg \
+      lsb-release
+  - name: official gpg key
+    shell: |
+      sudo mkdir -p /etc/apt/keyrings
+      curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+  - name: set up the repository
+    shell: echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null 
+  - name: install docker engine
+    shell: | 
+      sudo apt-get update
+      sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
+  - name: set user
+    shell: sudo usermod -aG docker $USER
+  - name: reboot
+    shell: sudo reboot
+    ignore_errors: yes
+  
