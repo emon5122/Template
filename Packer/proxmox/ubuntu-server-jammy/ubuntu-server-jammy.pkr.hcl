@@ -34,7 +34,7 @@ source "proxmox" "ubuntu-server-jammy" {
 
     # VM OS Settings
     # (Option 1) Local ISO File
-    # iso_file = "local:iso/ubuntu-22.04-live-server-amd64.iso"
+    iso_file = "local:iso/ubuntu-22.04-live-server-amd64.iso"
     # - or -
     # (Option 2) Download ISO
     # iso_url = "https://releases.ubuntu.com/22.04/ubuntu-22.04-live-server-amd64.iso"
@@ -93,12 +93,12 @@ source "proxmox" "ubuntu-server-jammy" {
     # http_port_max = 8802
 
     ssh_username = "sysadmin"
-
+    #
     # (Option 1) Add your Password here
     # ssh_password = "your-password"
     # - or -
     # (Option 2) Add your Private SSH KEY file here
-    # ssh_private_key_file = "~/.ssh/id_rsa"
+    ssh_private_key_file = "~/.ssh/id_rsa"
 
     # Raise the timeout, when installation takes longer
     ssh_timeout = "20m"
