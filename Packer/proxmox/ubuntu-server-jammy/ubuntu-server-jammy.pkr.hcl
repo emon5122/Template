@@ -24,11 +24,11 @@ source "proxmox" "ubuntu-server-jammy" {
     username = "${var.proxmox_api_token_id}"
     token = "${var.proxmox_api_token_secret}"
     # (Optional) Skip TLS Verification
-    # insecure_skip_tls_verify = true
+    #insecure_skip_tls_verify = true
     
     # VM General Settings
-    node = "powerhouse"
-    vm_id = "1000"
+    node = "Powerhouse"
+    vm_id = "1100"
     vm_name = "ubuntu-server-jammy"
     template_description = "Ubuntu Server jammy Image"
 
@@ -51,7 +51,7 @@ source "proxmox" "ubuntu-server-jammy" {
     disks {
         disk_size = "20G"
         format = "qcow2"
-        storage_pool = "local-lvm"
+        storage_pool = "local"
         storage_pool_type = "lvm"
         type = "virtio"
     }
@@ -71,7 +71,7 @@ source "proxmox" "ubuntu-server-jammy" {
 
     # VM Cloud-Init Settings
     cloud_init = true
-    cloud_init_storage_pool = "local-lvm"
+    cloud_init_storage_pool = "local"
 
     # PACKER Boot Commands
     boot_command = [
