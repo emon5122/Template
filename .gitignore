@@ -1,0 +1,3 @@
+Packer/creds
+Packer/proxmox/credentials-pve1.pkr.hcl
+Packer/proxmox/credentials-pve2.pkr.hcl
