@@ -88,9 +88,9 @@ source "proxmox" "ubuntu-server-jammy" {
     # PACKER Autoinstall Settings
     http_directory = "http" 
     # (Optional) Bind IP Address and Port
-    # http_bind_address = "0.0.0.0"
-    # http_port_min = 8802
-    # http_port_max = 8802
+    http_bind_address = "10.27.27.31"
+    http_port_min = 8802
+    http_port_max = 8802
 
     ssh_username = "sysadmin"
     #
