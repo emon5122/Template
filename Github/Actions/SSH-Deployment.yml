@@ -1,0 +1,22 @@
+name: SSH Deployment
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  Deployment:
+    runs-on: ubuntu-latest
+    steps:
+        -
+          name: checkout
+          uses: actions/checkout@v3
+       -
+          name: SSH and Deployment
+          uses: appleboy/ssh-action@master
+          with:
+            host: ${{ secrets.HOST }}
+            username: ${{ secrets.USERNAME }}
+            key: ${{ secrets.KEY }}
+            port: ${{ secrets.PORT }}
+            script: bash some-script.sh
