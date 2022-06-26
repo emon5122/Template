@@ -63,5 +63,6 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
-
+.vagrant
+**/.vagrant
 # End of https://www.toptal.com/developers/gitignore/api/terraform,packer,ansible
