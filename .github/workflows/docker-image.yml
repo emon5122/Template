@@ -58,7 +58,7 @@ jobs:
           uses: docker/build-push-action@v3
           with:
               context: .
-              file: Dockerfiles/Workstation-in-a-conatiner/Dockerfile
+              file: Template/Dockerfiles/Workstation-in-a-container/Dockerfile
               platforms: linux/amd64,linux/arm64
               push: true
               tags: ${{ steps.meta.outputs.tags }}
